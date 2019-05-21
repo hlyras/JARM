@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Menu de controle dos</p>
+            <h3>Produtos em estoque</h3>
+          </header>
+        </div>
+      </section>
+
+      <input type="button" class="button small alt" onclick="window.location.href='/fabrica'" value="<<">
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+          <div class="grid-style">
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <p>Produtos para</p>
+                    <h4>Estoque</h4>
+                    <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                          <input type="hidden" name="id" id="id" value="">
+                          <input type="text" name="cod" id="cod" maxlength="4" placeholder="Código" autocomplete="off">
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <select name="type" id="type">
+                            <option value="0">Tipo</option>
+                            <option value="colete">Colete</option>
+                            <option value="pecamodular">Peça modular</option>
+                            <option value="coldre">Coldre</option>
+                            <option value="bornal">Bornal</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <select name="color" id="color">
+                            <option value="0">Cor</option>
+                            <option value="pt">Preto</option>
+                            <option value="vd">Verde</option>
+                            <option value="tan">Tan</option>
+                            <option value="cvd">Camo verde</option>
+                            <option value="cpt">Camo preto</option>
+                          </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row uniform">
+                      <div class="8u 12u$(xsmall)">
+                        <input type="text" name="name" id="name" maxlength="18" placeholder="Nome" autocomplete="off">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <select name="size" id="size">
+                          <option value="">Tamanho</option>
+                          <option value="PP">PP</option>
+                          <option value="P">P</option>
+                          <option value="M">M</option>
+                          <option value="G">G</option>
+                          <option value="GG">GG</option>
+                          <option value="XG">XG</option>
+                          <option value=" ">Sem tamanho</option>
+                        </select>
+                      </div>
+                        <br>
+                    </div>
+                        <br>
+                        <input type="button" id="create-product-btn" class="button alt" value="Cadastrar">
+                  </header>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <h4>Produtos cadastrados no estoque</h4>
+                    <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <form id="product-storage-filter">
+                          <select id="get-type">
+                            <option value="0">Tipo</option>
+                            <option value="colete">Colete</option>
+                            <option value="pecamodular">Peça modular</option>
+                            <option value="coldre">Coldre</option>
+                            <option value="bornal">Bornal</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <select id="get-color">
+                            <option value="0">Cor</option>
+                            <option value="pt">Preto</option>
+                            <option value="vd">Verde</option>
+                            <option value="tan">Tan</option>
+                            <option value="cpt">Camo preto</option>
+                            <option value="cvd">Camo verde</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <button type="submit" class="button xsmall alt" style="width:140px">Filtrar</button>
+                        </div>
+                      </form>
+                    </div>
+                    <br>
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>Cod</td>
+                          <td>Nome</td>
+                          <td>Cor</td>
+                          <td>Qtd</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                      </tbody>
+                    </table>
+                  </header>
+                  <div class="align-center">
+                    <br>
+                    <button id="anterior" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                    <span id="numeracao"></span>
+                    <button id="proximo" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../partials/footer %>
+    </footer>
+  </body>
+</html>

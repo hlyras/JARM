@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ../partials/nav %>
+      
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Bem vindo ao seu cadastro</p>
+            <h3><%= userName %></h3>
+          </header>
+        </div>
+      </section>
+
+      <input type="button" class="button small alt" onclick="window.location.href='/'" value="<- voltar">
+      
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+          <div class="grid-style">
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <div class="align-center">
+                  <table>
+                    <tr>
+                      <td>Id</td>
+                      <td>Nome</td>
+                      <td>Função</td>
+                    </tr>
+                    <tr>
+                      <td><%= userId %></td>
+                      <td><%= userName %></td>
+                      <td><%= userOccupation %></td>
+                      <td><a id="user-change-password">Alterar senha</a></td>
+                    </tr>
+                  </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <div class="align-center">
+                    <table>
+                      <tr>
+                        <td>demo</td>
+                        <td>demo</td>
+                        <td>demo</td>
+                      </tr>
+                      <tr>
+                        <td>demo</td>
+                        <td>demo</td>
+                        <td>demo</td>
+                      </tr>
+                    </table>
+                    <header class="align-center">
+                      <p>mattis elementum sapien pretium tellus</p>
+                      <h2>Vestibulum sit amet</h2>
+                    </header>
+                    <p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+                    <footer class="align-center">
+                      <a href="#" class="button alt">Learn More</a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

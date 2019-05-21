@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+  <head id="head">
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+      </header>
+
+    <!-- Nav -->
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <p>Loja e fábrica de artigos militares</p>
+            <h3>J.A Rio militar</h3>
+          </header>
+        </div>
+      </section>
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+          <header class="align-center">
+            <a id="a" href="/portfolioPress">Imprimir tabela</a>
+          </header>
+          <br>
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <p>Tabela de compra</p>
+                    <div class="image fit">
+                        <table>
+                        <tr>
+                          <td>Cod</td>
+                          <td>Nome</td>
+                          <td>Cor</td>
+                          <td>1un</td>
+                          <td>3un</td>
+                          <td>5un</td>
+                          <td>10un</td>
+                        </tr>
+                        <% for(var i in products){ %>
+                          <tr>
+                            <td><%= products[i].cod %></td>
+                            <td><%= products[i].name %></td>
+                            <td><%= products[i].color %></td>
+                            <td>$<%= products[i].value1 %></td>
+                            <td>$<%= products[i].value3 %></td>
+                            <td>$<%= products[i].value5 %></td>
+                            <td>$<%= products[i].value10 %></td>
+                          </tr>
+                        <% } %>
+                      </table>
+                    </div>
+                  </header>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+      
+  </body>
+</html>

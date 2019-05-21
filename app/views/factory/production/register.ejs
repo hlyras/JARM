@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Produção</p>
+          </header>
+        </div>
+      </section>
+
+      <input type="button" class="button small alt" onclick="window.location.href='/fabrica'" value="<- voltar">
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <header class="align-center">
+                <p>Cadastrar pedido</p>
+                <br>
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <input type="hidden" name="id" id="id" value="">
+                    <select name="origin" id="origin" autocomplete="off">
+                      <option value="interna">Interna</option>
+                      <option value="externa">Externa</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <select name="provider" id="provider" autocomplete="off">
+                      <option value="compartilhado">Compartilhado</option>
+                      <option value="João">João Victor</option>
+                      <option value="Fabiano">Fabiano</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <select id="status" name="status" autocomplete="off">
+                      <option value="preparacao">Preparação</option>
+                      <option value="produzindo">Env.p/ produção</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <p>Selecionar produto</p>
+                <br>
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                  <form id="product-form-filter">
+                    <select id="get-type">
+                      <option value="0">Tipo</option>
+                      <option value="colete">Colete</option>
+                      <option value="pecamodular">Peça modular</option>
+                      <option value="coldre">Coldre</option>
+                      <option value="bornal">Bornal</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <select id="get-color">
+                      <option value="0">Cor</option>
+                      <option value="pt">Preto</option>
+                      <option value="vd">Verde</option>
+                      <option value="tan">Tan</option>
+                      <option value="cpt">Camo preto</option>
+                      <option value="cvd">Camo verde</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <button type="submit" class="button xsmall alt" style="width:140px">Filtrar</button>
+                  </div>
+                  </form>
+                </div>
+                <br>
+
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <select name="product" id="product">
+                      <option value="0">Produto</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <input type="number" name="amount" id="amount" class="button big alt" placeholder="Quantidade">
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <!-- <input type="button" id="add-product-btn" class="button alt" value="add produto"> -->
+                  </div>
+                  <br>
+                </div>
+                  <br>
+                <textarea id="obs" name="obs" placeholder="Observações"></textarea>
+                  <p></p>
+                  <br>
+                <!-- <table>
+                  <thead>
+                    <tr>
+                      <td>Produto Info</td>
+                      <td>Quantidade</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                  </tbody>
+                </table>
+                <p></p>
+                <br> -->
+                <input type="button" id="create-production-btn" class="button alt" value="cadastrar">
+              </header>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../partials/footer %>
+    </footer>
+  </body>
+</html>

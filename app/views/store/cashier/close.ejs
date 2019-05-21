@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../partials/nav2 %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <h3>Fechar caixa</h3>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+          
+          <div class="box">
+            <div class="content align-center">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Caixa</td>
+                    <td>Data</td>
+                    <td>Valor total</td>
+                    <td>Sangrias</td>
+                    <td>Valor</td>
+                  </tr>
+                </thead>
+                <tbody id="cashier-info-tbody">
+                  <tr>
+                    <td><%= cashier.id %></td>
+                    <td><%= cashier.date %></td>
+                    <td><%= cashier.total_value %></td>
+                    <td><%= total_drain %></td>
+                    <td><%= cashier.value %></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <div class="row uniform">
+                <div class="4u 12u$(xsmall)">
+                  <input type="text" id="close-cashier-user" placeholder="Usuário" autocomplete="off">
+                </div>
+                <div class="4u 12u$(xsmall)">
+                  <input type="text" id="close-cashier-password" placeholder="Senha" autocomplete="off">
+                </div>
+                <div class="4u 12u$(xsmall)">
+                  <button id="close-cashier-btn" class="button alt">Fechar caixa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <button id="list-cashier-drain-btn" class='button alt'>Sangrias</button>
+            <div class="content align-center" id="showCashierDrainContent" style='display:none'>
+              <div class="row uniform">
+                <div class="3u 12u$(xsmall)">
+                  <input type="number" placeholder="0.00" id="drain-cashier-value" class="button alt" required name="price" min="0" value="0" step="0.05" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'">
+                </div>
+                <div class="3u 12u$(xsmall)">
+                  <input type="text" id="drain-cashier-user" name="drain-cashier-user" placeholder="Usuário" autocomplete="off">
+                </div>
+                <div class="3u 12u$(xsmall)">
+                  <input type="text" id="drain-cashier-password" name="drain-cashier-password" placeholder="Senha" autocomplete="off">
+                </div>
+                <div class="3u 12u$(xsmall)">
+                  <button id="drain-cashier-btn" class="button alt">Sangrar</button>
+                </div>
+              </div>
+              <br>
+              <table>
+                <thead>
+                  <tr>
+                    <td>Id</td>
+                    <td>Caixa</td>
+                    <td>Data</td>
+                    <td>Valor</td>
+                    <td>Usuário</td>
+                  </tr>
+                </thead>
+                <tbody id="main-cashier-drain-tbody">
+                  
+                </tbody>
+              </table>
+              <div>
+                <br>
+                <button id="drainPrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                <span id="drainPageNumber"></span>
+                <button id="drainNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <button id="list-cashier-store-sale-btn" class='button alt'>Vendas</button>
+            <div class="content" id="showStoreSaleContent" style='display:none'>
+              <header class="align-center">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>Cod</td>
+                      <td>Data</td>
+                      <td>Nome</td>
+                      <td>CPF</td>
+                      <td>Valor</td>
+                    </tr>
+                  </thead>
+                  <tbody id="main-store-sale-tbody">
+                    
+                  </tbody>
+                </table>
+                <div class="align-center">
+                  <br>
+                  <button id="storeSalePrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                  <span id="salePageNumber"></span>
+                  <button id="storeSaleNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                </div>
+
+                <div class="row uniform">
+                  <div class="6u 12u$(xsmall)">
+                    <div class="box" id="showStoreSaleBox" style="display:none;">
+                      <div id="showStoreSale">
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="6u 12u$(xsmall)">
+                    <div class="box" id="showCustomerBox" style="display:none;">
+                      <div id="showCustomer">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </header>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../partials/footer %>
+    </footer>
+  </body>
+</html>

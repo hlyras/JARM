@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Controle de</p>
+            <h3>Produção</h3>
+          </header>
+        </div>
+      </section>
+
+       <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <header class="align-center">
+                   <p>Registrar</p>
+                  <h4>Devolução</h4>
+                  <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                        <select name="origin" id="origin">
+                          <option value="mljc">ML JC</option>
+                          <option value="mlchris">ML Chris</option>
+                          <option value="site">Site</option>
+                          <option value="wpp">WhatsApp</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" name="cod" id="cod" placeholder="Cód da venda">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" name="name" id="name" placeholder="Nome do comprador">
+                      </div>
+                  </div>
+                  <br>
+                  <p>Produtos devolvidos</p>
+                  <br>
+                  <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <form id="product-form-filter">
+                          <select id="get-type">
+                            <option value="0">Tipo</option>
+                            <option value="colete">Colete</option>
+                            <option value="pecamodular">Peça modular</option>
+                            <option value="coldre">Coldre</option>
+                            <option value="bornal">Bornal</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <select id="get-color">
+                            <option value="0">Cor</option>
+                            <option value="pt">Preto</option>
+                            <option value="vd">Verde</option>
+                            <option value="tan">Tan</option>
+                            <option value="cpt">Camo preto</option>
+                            <option value="cvd">Camo verde</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <button type="submit" class="button xsmall alt" style="width:140px">Filtrar</button>
+                        </div>
+                      </form>
+                    </div>
+                      <br>
+
+                      <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                      <select name="product" id="product">
+                        <option value="0">Produto</option>
+                      </select>
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                      <input type="number" name="amount" id="amount" class="button big alt" placeholder="Quantidade">
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                      <input type="button" id="add-product-btn" class="button alt" value="add produto">
+                    </div>
+                      <br>
+                  </div>
+                  <br>
+                        <!-- Devolução do wpp com os dados do cliente, cpf, telefone, endereço -->
+                  <textarea id="obs" name="obs" placeholder="Observações"></textarea>
+                  <p></p>
+                  <br>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td>Produto Info</td>
+                        <td>Quantidade</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                  </table>
+                  <p></p>
+                  <br>
+                  <input type="button" id="create-devolution-btn" class="button alt" value="cadastrar">
+                </header>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <header class="align-center">
+                  <p>Buscar devoluções</p>
+                  <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                      <form id="filter-sale-devolution">
+                        <select id="get-origin" name="get-origin">
+                          <option value="mljc">ML JC</option>
+                          <option value="mlchris">ML Chris</option>
+                          <option value="site">Site</option>
+                          <option value="wpp">WhatsApp</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" id="get-cod" name="get-cod" placeholder="Cód da venda">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" id="get-name" name="get-name" placeholder="Comprador">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <select id="get-status" name="get-status">
+                          <option value="0">Não confirmado</option>
+                          <option value="1">Confirmado</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input id="get-date" name="get-date" type="date" class="button small alt">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <button type="submit" class="button small alt">Filtrar</button>
+                      </div>
+                    </form>
+                  </div>
+                  <br>
+                  <p></p>
+                  <table border="1">
+                    <thead>
+                      <tr>
+                        <td>Id</td>
+                        <td>Origem</td>
+                        <td>Cód</td>
+                        <td>Comprador</td>
+                        <td>Data</td>
+                        <td>Usuário</td>
+                      </tr>
+                    </thead>
+                    <tbody id="main-sale-devolution-tbody">
+                      
+                    </tbody>
+                  </table>
+                </header>
+                <div class="align-center">
+                  <br>
+                  <button id="saleDevolutionPrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                  <span id="saleDevolutionPage"></span>
+                  <button id="saleDevolutionNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="box" id="showDevolutionBox" style="display:none;">
+              <div class="content">
+                <header class="align-center">
+                  <div id="showDevolution">
+
+                  </div>
+                </header>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../../partials/footer %>
+    </footer>
+  </body>
+</html>

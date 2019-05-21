@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../partials/nav3 %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Administração</p>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+          <div class="grid-style">
+
+             <div>
+                <div class="box">
+                  <div class="content">
+                    <header class="align-center">
+                      <p>Ferramentas de </p>
+                      <h3>Logística e Produção</h3>
+                    </header>
+                    <footer class="align-center">
+                      <a href="/fabrica" class="button alt">Acessar</a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="box">
+                  <div class="content">
+                    <header class="align-center">
+                      <p>Sistema de</p>
+                      <h3>Lojas</h3>
+                    </header>
+                    <footer class="align-center">
+                      <a href="/loja" class="button alt">Acessar</a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer>
+      <% include ./../partials/footer %>
+    </footer>
+  </body>
+</html>

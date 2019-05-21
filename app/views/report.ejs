@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Administração</p>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div>
+              
+            <div class="content">
+              <header class="align-center">
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <p>Relatórios de produção</p>
+                    <select id="production-report-status" autocomplete="off">
+                      <option value="0">Selecione o status</option>
+                      <option value="concluido">Concluído</option>
+                      <option value="n-concluido">Não concluído</option>
+                      <option value="a-concluir">A concluir</option>
+                      <option value="todos">Todos</option>
+                    </select>
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>Cod</td>
+                          <td>Produto</td>
+                          <td>Cor</td>
+                          <td>Pedido</td>
+                          <td>Recebido</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </header>
+            </div>
+            
+          </div>
+
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <% include ./partials/footer %>
+    </footer>
+  </body>
+</html>

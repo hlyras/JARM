@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+  <head id="head">
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+      </header>
+
+    <!-- Nav -->
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Loja e fábrica de artigos militares</p>
+            <h3>J.A Rio militar</h3>
+          </header>
+        </div>
+      </section>
+
+      
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+          <header class="align-center">
+            <a id="a" href="/portfolioTable">Tabela de produtos</a>
+          </header>
+          <br>
+          <div class="grid-style">
+            <% for(var i in products){ %>
+
+              <div>
+                <div class="box">
+                  <div class="content">
+                    <header class="align-center">
+                      <p>Informações</p>
+                      <h4><%= products[i].name %></h4>
+                      <div class="image fit">
+                          <table>
+                          <tr>
+                            <td>Cód</td>
+                            <td>Cor</td>
+                            <td>1un</td>
+                            <td>3un</td>
+                            <td>5un</td>
+                            <td>10un</td>
+                          </tr>
+                          <tr>
+                            <td><%= products[i].cod %></td>
+                            <td><%= products[i].color %></td>
+                            <td>$<%= products[i].value1 %></td>
+                            <td>$<%= products[i].value3 %></td>
+                            <td>$<%= products[i].value5 %></td>
+                            <td>$<%= products[i].value10 %></td>
+                          </tr>
+                        </table>
+                        <div class="slider">
+                          <div>
+                            <img src="<%= products[i].pic1 %>" alt="slider image">
+                          </div>
+                          <div>
+                            <img src="<%= products[i].pic2 %>" alt="slider image">
+                          </div>
+                          <div>
+                            <img src="<%= products[i].pic3 %>" alt="slider image">
+                          </div>
+                          <div>
+                            <img src="<%= products[i].pic4 %>" alt="slider image">
+                          </div>
+                          <div>
+                            <img src="<%= products[i].pic5 %>" alt="slider image">
+                          </div>
+                        </div>
+                      </div>
+                    </header>
+                    <br>
+                    <footer class="align-center">
+                      <a href="#" class="button alt">Comprar</a>
+                    </footer>
+
+                  </div>
+                </div>
+              </div>
+
+            <% } %>
+
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+      
+  </body>
+</html>

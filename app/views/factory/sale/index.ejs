@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <h3>Vendas online</h3>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+
+
+              <div>
+                <div class="box">
+                  <div class="content">
+                    <header class="align-center">
+                      <p>Menu de</p>
+                      <h4>Venda</h4>
+                      <button class="button alt" onclick="window.location.href='/venda-cadastro'">Cadastrar</button>
+                      <button class="button alt" onclick="window.location.href='/venda-gerir'">Atualizar</button>
+                      <button class="button alt" onclick="window.location.href='/venda-devolucao'">Devolução</button>
+                      <button class="button alt" onclick="window.location.href='/venda-retira'">Retira</button>
+                    </header>
+                  </div>
+                </div>
+              </div>
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <h4>Vendas realizadas</h4>
+                    <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <form id="filter-sale-form">
+                          <select id="get-origin" name="get-origin">
+                            <option value="mljc">ML JC</option>
+                            <option value="mlchris">ML Chris</option>
+                            <option value="site">Site</option>
+                            <option value="wpp">WhatsApp</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <input type="text" id="get-cod" name="get-cod" placeholder="Cód da venda">
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <input type="text" id="get-name" name="get-name" placeholder="Comprador">
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <select id="get-status" name="get-status">
+                            <option value="preparacao">Preparação</option>
+                            <option value="enviado">Enviado</option>
+                            <option value="cancelado">Cancelado</option>
+                            <option value="em-devolucao">Ag. devolução</option>
+                            <option value="devolucao">Devolução</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <input id="get-date" name="get-date" type="date" class="button small alt">
+                        </div>
+                        <div class="2u 12u$(xsmall)">
+                          <button class="button small alt" id="filterUnwithdrawal">Sem retira</button>
+                        </div>
+                        <div class="2u 12u$(xsmall)">
+                          <button type="submit" class="button small alt">Filtrar</button>
+                        </div>
+                      </form>
+                    </div>
+                    <br>
+                    <p></p>
+                    <button class="button small alt" id="printOnly" onclick="getPrintData()">Imprimir pedidos</button>
+                    <button class="button small alt" id="printWithdrawal"onclick="getWithdrawalData()">Imprimir e gerar retira</button>
+                    <br>
+                    <table border="1">
+                      <thead>
+                        <tr>
+                          <td></td>
+                          <td>Origem</td>
+                          <td>Cód</td>
+                          <td>Comprador</td>
+                          <td>Data</td>
+                          <td>Status</td>
+                          <td>Usuário</td>
+                          <td>Retira</td>
+                          <td>Dev</td>
+                        </tr>
+                      </thead>
+                      <tbody id="main-sale-tbody">
+
+                      </tbody>
+                    </table>
+                  </header>
+                  <div class="align-center">
+                    <br>
+                    <button id="salePrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                    <span id="salePageNumber"></span>
+                    <button id="saleNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content">
+              <header class="align-center">
+
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <div class="box" id="showSaleBox" style="display:none;">
+                      <div id="showSale">
+                        
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <div class="box" id="showDevolutionBox" style="display:none;">
+                      <div id="showDevolution">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <div class="box" id="showWithdrawalBox" style="display:none;">
+                      <div id="showWithdrawal">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </header>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <div id="print-div" style="margin:0px;padding:0px;">
+        
+      </div>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../partials/footer %>
+    </footer>
+  </body>
+</html>

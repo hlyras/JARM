@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../partials/navCashier %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <h3>Produtos em estoque</h3>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <h5 id="cashier-id" hidden><%= cashier.id %></h5>
+                <header class="align-center">
+                  <select id="change-customer-sale-form" autocomplete="off">
+                    <option value="0">Comprador</option>
+                    <option value="search-customer-box">Buscar cliente</option>
+                    <option value="create-customer-box">Cadastrar cliente</option>
+                  </select>
+                  <div id="search-customer-div" hidden>
+                    <br>
+                    <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" name="get-customer-name" id="get-customer-name" placeholder="Nome" maxlength="25">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" name="get-customer-cpf" id="get-customer-cpf" placeholder="CPF" maxlength="11">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="button" id="filter-customer-btn" class="button alt" value="Buscar">
+                      </div>
+                    </div>
+                  </div>
+                  <div id="create-customer-div" hidden>
+                    <br>
+                    <div class="row uniform">
+                      <div class="3u 12u$(xsmall)">
+                        <input type="text" name="create-customer-name" id="create-customer-name" placeholder="Nome" maxlength="25">
+                      </div>
+                      <div class="3u 12u$(xsmall)">
+                        <input type="text" name="create-customer-cpf" id="create-customer-cpf" placeholder="CPF" maxlength="11">
+                      </div>
+                      <div class="3u 12u$(xsmall)">
+                        <input type="text" name="create-customer-phone" id="create-customer-phone" placeholder="Telefone" maxlength="11">
+                      </div>
+                      <div class="3u 12u$(xsmall)">
+                        <input type="button" id="create-customer-btn" class="button alt" value="Cadastrar">
+                      </div>
+                    </div>
+                  </div>
+                </header>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <header class="align-center">
+                  <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <form id="product-form-filter">
+                          <select id="get-type">
+                            <option value="0">Tipo</option>
+                            <option value="colete">Colete</option>
+                            <option value="pecamodular">Peça modular</option>
+                            <option value="coldre">Coldre</option>
+                            <option value="bornal">Bornal</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <select id="get-color">
+                            <option value="0">Cor</option>
+                            <option value="pt">Preto</option>
+                            <option value="vd">Verde</option>
+                            <option value="tan">Tan</option>
+                            <option value="cpt">Camo preto</option>
+                            <option value="cvd">Camo verde</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <button type="submit" class="button xsmall alt" style="width:140px">Filtrar</button>
+                        </div>
+                      </form>
+                    </div>
+                      <br>
+
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <select name="product" id="product">
+                      <option value="0">Produto</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <input type="number" name="amount" id="amount" class="button small alt" placeholder="Quantidade">
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <input type="button" id="add-product-sale-btn" class="button alt" value="add produto">
+                  </div>
+                </div>
+              </header>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="box">
+            <div class="content">
+              <header class="align-center">
+                <div id="store-sale-data"> 
+                  <p>Dados da venda</p>
+                  <br>
+                  <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                      <select name="customer" id="customer">
+                        <option value="0">Cliente</option>
+                      </select>
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                      <select name="payment" id="payment">
+                        <option value="0">Pagamento</option>
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="cc">Crédito</option>
+                        <option value="cd">Débito</option>
+                        <option value="cheque">Cheque</option>
+                      </select>
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                      <select name="installment" id="installment">
+                        <option value="1">A vista</option>
+                        <option value="2">2x</option>
+                        <option value="3">3x</option>
+                        <option value="4">4x</option>
+                        <option value="5">5x</option>
+                        <option value="6">6x</option>
+                        <option value="7">7x</option>
+                        <option value="8">8x</option>
+                        <option value="9">9x</option>
+                        <option value="10">10x</option>
+                        <option value="11">11x</option>
+                        <option value="12">12x</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td>Produto Info</td>
+                        <td></td>
+                        <td>Quantidade</td>
+                        <td></td>
+                        <td>valor un.</td>
+                        <td>valor tot.</td>
+                      </tr>
+                    </thead>
+                    <tbody id="product-kart-tbody">
+                      
+                    </tbody>
+                  </table>
+                  <br>
+                  <br>
+                  <p></p>
+                  <br>
+                  <h4>Selecionar valor de desconto</h4>
+                  <div class="row uniform">
+                    <div class="6u 12u$(xsmall)">
+                      <input type="number" placeholder="0.00" id="src-discount-value" class="button alt" required name="price" min="0" value="0" step="0.05" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'">
+                    </div>
+                    <div class="6u 12u$(xsmall)">
+                      <input type="button" id="insert-discount-btn" class="button alt" value="add desconto">
+                    </div>
+                  </div>
+                  <p></p>
+                  <br>
+                  <h4>Conclusão da venda</h4>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td>Desconto</td>
+                        <td>Pac. Peças</td>
+                        <td>Valor total</td>
+                        <td>Valor final</td>
+                      </tr>
+                    </thead>
+                    <tbody id="sale-screen-tbody">
+                      <td id='sale-total-full-packs-amount'>0</td>
+                      <td id='sale-total-molle-packs-amount'>0</td>
+                      <td id='sale-value'>0</td>
+                      <td id='sale-total-value' style='font-weight:bold;color:green;font-size:20px;'>0</td>
+                    </tbody>
+                  </table>
+                </div>
+                <br>
+                <br>
+                <input type="button" id="create-store-sale-btn" class="button alt" value="Finalizar venda">
+              </header>
+            </div>
+          </div>
+
+          
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../partials/footer %>
+    </footer>
+  </body>
+</html>

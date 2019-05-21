@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head id="head">
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <div class='logo'>
+      <a href='/' id="a">J.A Rio militar</a>
+    </div>
+    <div class="align-center">
+        <table>
+          <tr>
+            <td>cod</td>
+            <td>nome</td>
+            <td>cor</td>
+            <td>1un</td>
+            <td>3un</td>
+            <td>5un</td>
+            <td>10un</td>
+          </tr>
+          <% for(var i in products){ %>
+            <tr>
+              <td><%= products[i].cod %></td>
+              <td><%= products[i].name %></td>
+              <td><%= products[i].color %></td>
+              <td><%= products[i].value1 %></td>
+              <td><%= products[i].value3 %></td>
+              <td><%= products[i].value5 %></td>
+              <td><%= products[i].value10 %></td>
+            </tr>
+          <% } %>
+        </table>
+      <div>
+  </body>
+</html>

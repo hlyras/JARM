@@ -1,0 +1,141 @@
+Objetivos do projeto
+
+	Criar material para estudo da empresa.
+		Arquitetura de funções;
+		Documentação de fluxo;
+		controle de processos;
+		Relatórios;
+		Banco de dados;
+
+	Planejamento de desenvolvimento.
+		Padrões do usuário;
+		interação com o cliente;
+		Sistema operacional e de gestão;
+		Algoritmar a solução;
+		Estratégia de execução;
+
+Fluxo de processos;
+
+- Produção '/producao'
+	- cadastrar '/producao-cadastro' 
+
+		1.01 - Selecione a 'origem' se interna ou externa da produção e 
+		em seguida será disponibilizado a lista fornecedores. 
+
+		1.02 - Selecione o fornecedor do pedido. 
+
+		1.03 - Selecione se o pedido ainda está em 'preparação' ou já foi 'enviado para produção'.
+		O pedido em 'preparação' pode ser excluído caso haja mudança 
+		de planejamento, após 'enviado para produção' o pedido não pode mais ser cancelado. 
+
+		1.04 - "Filtro de formulário de produtos" ~2.01.
+			Selecione o produto desejado e a 
+			quantidade do pedido. 
+
+		1.05 - Observação opcional. 
+
+		1.06 - Cadastrar pedido de produção.
+
+	- atualizar '/producao-gerir' - 
+
+		- É possível ter acesso aos detalhes da produção 
+		clicando em seu número de id;
+
+		1.07 - "Filtro de busca das produções." 
+			Selecione a 'origem', o 'fornecedor',
+			a 'situação', o 'produto' e a 'data'
+			da produção e utilize o botão 'buscar'. 
+
+		1.08 - Preparação-
+			'env.p/produção' 
+				Atualiza o status da produção de 'preparação' para 'env.p/produção'.
+			'excluir' 
+				Exclui o pedido selecionado.
+
+		1.09 - Env.p/ produção 
+		1.10 - Parcial 
+			'selecione o status'
+				Selecione qual a forma de recebimento do produto, 
+				Recebimentos 'parciais' devem ter no campo flutuante de 'observações' o 
+				motivo pelo qual o recebimento não foi completo. 
+				Recebimentos 'finalizados' com quantidade de recebimento abaixo 
+				da quantidade do pedido devem ser justificados através do campo flutuante de 'observações'. 
+
+			'selecione a quantidade' 
+				Informe qual a 'quantidade' recebida.
+				Se a quantidade do recebimento for igual a do pedido, pedido deverá ser atualizado para finalizado. Observação opcional. 
+				Se a quantidade do recebimento for menor que a do pedido, pedido poderá ser atualizado para 'parcial' novamente
+				ou 'finalizado'. Caso seja 'finalizado' deverá conter uma observação. 
+
+			'update'
+				O pedido será atualizado para o 'status' selecionado. 
+					Após atualizado um registro de recebimento de produção será criado e mantem a produção 'em análise' até que
+					o registro seja confirmado em '/estoque-entrada-producao' pelo setor responsável. ~2.06 
+					Registro pode ser visto através dos detalhes clicando no 'id' da produção. 
+
+		1.11 - Finalizado -
+			Pedido fica disponível apenas para visualização. Registros de entrada podem ser vistos
+			clicando no id da produção.
+
+- Estoque '/estoque'
+	
+	- É possível visualizar a quantidade de produtos do estoque pelo
+		"Filtro de formulário de produtos"
+		
+		2.01 - Faz uma busca de todos os produtos cadastrados, filtrando pelo 
+		tipo de produto e pela cor. Possível ver quantidade de produtos em estoque.
+
+	- 'Entradas de estoque'
+
+		- 'Entradas de produção'
+
+			2.02 - Selecionar um código de produção para filtro.
+
+			2.03 - Selecionar status do registro de 'recebimento de produção'.
+				'Não confirmado'
+					'Recebimentos de produção' que ainda estão aguardando confirmação.
+				'Confirmado'
+					'Recebimentos de produção' já confirmados.
+
+			2.04 - Seleciona a situação do pedido de produção.
+				'Parcial'
+					'Recebimentos de produção' registrados como entrada 'parcial'.
+
+				'finalizado'
+					'Recebimentos de produção' registrados como entrada 'finalizada'.
+
+			2.05 - "Filtro de formulário de produtos" ~2.01.
+
+			2.06 - "Filtro de recebimentos de produção"
+				'Confirmar entrada'
+					'parcial'
+					Atualiza o 'recebimento de produção' para confirmado.
+					Atualiza o 'pedido de produção' com a quantidade de entrada, libera o
+					status em análise. ~1.09.
+					
+					'finalizado'
+					Pedido fica disponível apenas para visualização.
+			
+		- 'Entradas de devolução'
+
+	- 'Saídas de estoque'
+
+		- 'Retira'
+
+
+- Vendas '/venda'
+	"Filtro de vendas"
+
+		É possível visualizar as vendas, devoluções e retiras através do id na tabela.
+
+		3.01 "Filtro venda sem retira"
+			Busca apenas os pedidos que ainda não foram cadastrados em nenhum pedido de retira.
+
+		3.02 - Imprimir vendas selecionadas.
+			Pode realizar quantas impressões forem precisas de venda, 
+			porém serve apenas para visualização e não é inclusa em nenhum 
+			pedido de retira.
+
+		3.02 "Filtro de formulário de vendas"
+			'Preparação'
+

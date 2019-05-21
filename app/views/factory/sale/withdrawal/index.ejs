@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <h3>Pedidos de retira</h3>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <header class="align-center">
+                  <h4>Menu de busca</h4>
+                  <div class="row uniform">
+                      <div class="3u 12u$(xsmall)">
+                        <input type="number" id="get-cod" name="get-cod" class="button small alt" placeholder="Cód">
+                      </div>
+                      <div class="3u 12u$(xsmall)">
+                        <select id="get-status" name="get-status">
+                          <option value="0">Não confirmado</option>
+                          <option value="1">Confirmado</option>
+                        </select>
+                      </div>
+                      <div class="3u 12u$(xsmall)">
+                        <input id="get-date" name="get-date" type="date" class="button small alt">
+                      </div>
+                      <div class="3u 12u$(xsmall)">
+                        <button type="submit" id="filter-sale-withdrawal-btn" class="button small alt">Filtrar</button>
+                      </div>
+                  </div>
+                  <br>
+                  <p></p>
+                  <table border="1">
+                    <thead>
+                      <tr>
+                        <td>Cód</td>
+                        <td>Data</td>
+                        <td>Usuário</td>
+                        <td>Status</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                  </table>
+                </header>
+                <div class="align-center">
+                  <br>
+                  <button id="anterior" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                  <span id="numeracao"></span>
+                  <button id="proximo" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="box content align-center" id="showWithdrawalBox" style="display:none;">
+              <div class="content">
+                <header class="align-center">
+                  <div id="showWithdrawal">
+
+                  </div>
+                </header>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </section>
+      <div id="print-div" style="margin:0px;padding:0px;">
+        
+      </div>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../../partials/footer %>
+    </footer>
+  </body>
+</html>

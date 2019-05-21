@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Controle de</p>
+            <h3>Produção</h3>
+          </header>
+        </div>
+      </section>
+
+       <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <header class="align-center">
+                   <p>Cadastrar pedido de</p>
+                  <h4>Venda online</h4>
+                  <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                        <select name="origin" id="origin">
+                          <option value="mljc">ML JC</option>
+                          <option value="mlchris">ML Chris</option>
+                          <option value="site">Site</option>
+                          <option value="wpp">WhatsApp</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" name="cod" id="cod" placeholder="Cód da venda">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input type="text" name="name" id="name" placeholder="Nome do comprador">
+                      </div>
+                  </div>
+                  <br>
+                  <p>Produtos do pedido</p>
+                  <br>
+                  <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <form id="product-form-filter">
+                          <select id="get-type">
+                            <option value="0">Tipo</option>
+                            <option value="colete">Colete</option>
+                            <option value="pecamodular">Peça modular</option>
+                            <option value="coldre">Coldre</option>
+                            <option value="bornal">Bornal</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <select id="get-color">
+                            <option value="0">Cor</option>
+                            <option value="pt">Preto</option>
+                            <option value="vd">Verde</option>
+                            <option value="tan">Tan</option>
+                            <option value="cpt">Camo preto</option>
+                            <option value="cvd">Camo verde</option>
+                          </select>
+                        </div>
+                        <div class="4u 12u$(xsmall)">
+                          <button type="submit" class="button xsmall alt" style="width:140px">Filtrar</button>
+                        </div>
+                      </form>
+                    </div>
+                      <br>
+
+                      <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                      <select name="product" id="product">
+                        <option value="0">Produto</option>
+                      </select>
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                      <input type="number" name="amount" id="amount" class="button big alt" placeholder="Quantidade">
+                    </div>
+                    <!-- <div class="3u 12u$(xsmall)">
+                      <select name="patern-select" id="patern-select">
+                        <option value="0">Personalizado</option>
+                        <option value="p-p-pp">Padrão preto PP</option>
+                        <option value="p-p-p">Padrão preto P</option>
+                        <option value="p-p-m">Padrão preto M</option>
+                        <option value="p-p-g">Padrão preto G</option>
+                        <option value="p-p-gg">Padrão preto GG</option>
+                        <option value="p-v-pp">Padrão verde PP</option>
+                        <option value="p-v-p">Padrão verde P</option>
+                        <option value="p-v-m">Padrão verde M</option>
+                        <option value="p-v-g">Padrão verde G</option>
+                        <option value="p-v-gg">Padrão verde GG</option>
+                        <option value="p-t-pp">Padrão tan PP</option>
+                        <option value="p-t-p">Padrão tan P</option>
+                        <option value="p-t-m">Padrão tan M</option>
+                        <option value="p-t-g">Padrão tan G</option>
+                        <option value="p-t-gg">Padrão tan GG</option>
+                      </select>
+                    </div> -->
+                    <div class="4u 12u$(xsmall)">
+                      <input type="button" id="add-product-btn" class="button alt" value="add produto">
+                    </div>
+                      <br>
+                  </div>
+                    <br>
+                    <p></p>
+                    <br>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td>Produto Info</td>
+                        <td>Quantidade</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                  </table>
+                  <p></p>
+                  <br>
+                  <input type="button" id="create-sale-btn" class="button alt" value="cadastrar">
+                </header>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../partials/footer %>
+    </footer>
+  </body>
+</html>

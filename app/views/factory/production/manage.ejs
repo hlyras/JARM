@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Produção</p>
+          </header>
+        </div>
+      </section>
+
+      <input type="button" class="button small alt" onclick="window.location.href='/fabrica'" value="<- voltar">
+
+       <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div>
+            <div class="box">
+              <div class="content">
+                <header class="align-center">
+                  <p>Filtrar pedidos</p>
+                  <br>
+                  <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                        <input type="hidden" name="id" id="id" value="">
+                        <select name="get-origin" id="get-origin" autocomplete="off">
+                          <option value="interna">Interna</option>
+                          <option value="externa">Externa</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <select name="get-provider" id="get-provider" autocomplete="off">
+                          <option value="0">Fornecedor</option>
+                          <option value="compartilhado">Compartilhado</option>
+                          <option value="João">João Victor</option>
+                          <option value="Fabiano">Fabiano</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <select id="get-status" name="get-status">
+                          <option value="preparacao">Preparação</option>
+                          <option value="produzindo">Env.p/ produção</option>
+                          <option value="parcial">Recebido parcial</option>
+                          <option value="finalizado">Recebido finalizado</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row uniform">
+                    <div class="4u 12u$(xsmall)">
+                      <form id="product-form-filter">
+                        <select id="get-type">
+                          <option value="0">Tipo</option>
+                          <option value="colete">Colete</option>
+                          <option value="pecamodular">Peça modular</option>
+                          <option value="coldre">Coldre</option>
+                          <option value="bornal">Bornal</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <select id="get-color">
+                          <option value="0">Cor</option>
+                          <option value="pt">Preto</option>
+                          <option value="vd">Verde</option>
+                          <option value="tan">Tan</option>
+                          <option value="cpt">Camo preto</option>
+                          <option value="cvd">Camo verde</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <button type="submit" class="button xsmall alt" style="width:140px">Filtrar</button>
+                      </div>
+                      </form>
+                    </div>
+                    <br>
+
+                    <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <select name="product" id="product">
+                          <option value="0">Produto</option>
+                        </select>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <input id="get-date" name="get-date" type="date" class="button small alt">
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <button id="filter-production-btn" class="button medium alt">Buscar</button>
+                      </div>
+                      <br>
+                    </div>
+                    <br>
+                    <p></p>
+                    <br>
+                    <table>
+                    <thead>
+                      <tr>
+                        <td>Id</td>
+                        <td>Origem</td>
+                        <td>Fornec.</td>
+                        <td>Produto</td>
+                        <td>Qtd</td>
+                        <td>Qtd rec.</td>
+                        <td>Data</td>
+                        <td>Status</td>
+                        <td>at. para</td>
+                        <td>Qtd rec</td>
+                      </tr>
+                    </thead>
+                    <tbody id="main-production-tbody">
+                      
+                    </tbody>
+                  </table>
+                </header>
+                <div class="align-center">
+                  <br>
+                  <button id="anterior" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                  <span id="numeracao"></span>
+                  <button id="proximo" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="box">
+              <div id="showProductionBox" style="display:none;">
+                <div class="content">
+                  <header class="align-center">
+                    <div id="showProduction">
+                      
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    <!-- Footer -->
+    <footer>
+      <% include ./../../partials/footer %>
+    </footer>
+  </body>
+</html>

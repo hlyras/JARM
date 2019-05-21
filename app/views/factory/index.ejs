@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Loja e fábrica de artigos militares</p>
+            <h3>J.A Rio militar</h3>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+          <div class="grid-style">
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <p><a href="/producao">Produção</a></p><br>
+                    <p><a href="/producao-cadastro">Cadastrar</a></p>
+                    <p><a href="/producao-gerir">Gerir</a></p>
+                    <p><a href="/produtos">Produtos</a></p>
+                  </header>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <p><a href="/venda">Venda online</a></p><br>
+                    <p><a href="/venda-cadastro">Cadastrar</a></p>
+                    <p><a href="/venda-gerir">Gerir</a></p>
+                    <p><a href="/venda-devolucao">Devolução</a></p>
+                    <p><a href="/venda-retira">Retira</a></p>
+                  </header>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <p><a href="/estoque">Estoque</a></p><br>
+                    <p><a href="/estoque-entrada">Entrada</a></p>
+                    <p><a href="/estoque-entrada-producao">Entrada de produção</a></p>
+                    <p><a href="/estoque-entrada-devolucao">Entrada de devolução</a></p><br>
+                    
+                    <p><a href="/estoque-saida">Saída</a></p>
+                    <p><a href="/estoque-saida-retira">Retira venda online</a></p>
+                    <p><a href="/estoque-saida-abastecimento">Abastecimento Loja</a></p>
+                  </header>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer>
+      <% include ./../partials/footer %>
+    </footer>
+  </body>
+</html>

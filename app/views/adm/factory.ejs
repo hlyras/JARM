@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<!--
+  Hielo by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head id="head">
+    <% include ./../partials/head %>
+  </head>
+  <body>
+    <!-- Header -->
+      <header id="header" class="alt">
+        <div class='logo'>
+          <a href='/'>J.A Rio militar</a>
+        </div>
+        <a onclick="var r = confirm('deseja sair?');if(r==true){window.location.href='/logout'}">log-out</a>
+        <a href='#menu'>Menu</a>
+      </header>
+
+    <!-- Nav -->
+    <% include ./../partials/nav %>
+
+    <!-- One -->
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <br>
+            <p>Administração</p>
+          </header>
+        </div>
+      </section>
+
+      <section id="one" class="wrapper style2">
+        <div class="inner">
+
+          <div class="box">
+            <div class="content">
+              <header class="align-center">
+                <select id="selectFactoryReport" autocomplete="off">
+                  <option value="0">Selecionar relatório</option>
+                  <option value="production">Produção</option>
+                  <option value="sale">Vendas</option>
+                </select>
+              </header>
+            </div>
+          </div>
+
+          <div class="box" id="productionBox" style="display:none;">
+              
+            <div class="content">
+              <header class="align-center">
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <select id="production-report-month" autocomplete="off">
+                      <option value="0">Selecione o mês</option>
+                      <option value="1">Janeiro</option>
+                      <option value="2">Fevereiro</option>
+                      <option value="3">Março</option>
+                      <option value="4">Abril</option>
+                      <option value="5">Maio</option>
+                      <option value="6">Junho</option>
+                      <option value="7">Julho</option>
+                      <option value="8">Agosto</option>
+                      <option value="9">Setembro</option>
+                      <option value="10">Outubro</option>
+                      <option value="11">Novembro</option>
+                      <option value="12">Dezembro</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <select id="production-report-status" autocomplete="off">
+                      <option value="todos">Todos</option>
+                      <option value="concluido">Concluído</option>
+                      <option value="n-concluido">Não concluído</option>
+                      <option value="a-concluir">A concluir</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <button id="report-production-filter-btn" class="button alt">Buscar</button>
+                  </div>
+                </div>
+                <div class="row uniform">
+                  <div class="6u 12u$(xsmall)">
+                    <p>Relatório de produção</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>Cod</td>
+                          <td>Produto</td>
+                          <td>Cor</td>
+                          <td>Pedido</td>
+                          <td>Recebido</td>
+                        </tr>
+                      </thead>
+                      <tbody id="report-product-production-tbody">
+                        
+                      </tbody>
+                    </table>
+                  <div class="align-center">
+                    <br>
+                    <button id="productProductionPrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                    <span id="productProductionPageNumber"></span>
+                    <button id="productProductionNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                  </div>
+                </div>
+                <div class="6u 12u$(xsmall)">
+                  <p>Relatório de produção</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td>id</td>
+                        <td>Data</td>
+                        <td>Origem</td>
+                        <td>Fornecedor</td>
+                        <td>Produto</td>
+                        <td>Pedido</td>
+                        <td>Recebido</td>
+                      </tr>
+                    </thead>
+                    <tbody id="main-production-tbody">
+                      
+                    </tbody>
+                  </table>
+                  <div class="align-center">
+                    <br>
+                    <button id="productionPrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                    <span id="productionPageNumber"></span>
+                    <button id="productionNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                  </div>
+                </div>
+              </div>
+              </header>
+              <div id="showProductionBox" style="display:none;">
+                <div class="content">
+                  <header class="align-center">
+                    <div id="showProduction">
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="box" id="saleBox" style="display:none;">
+              
+            <div class="content">
+              <header class="align-center">
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <select id="sale-report-month" autocomplete="off">
+                      <option value="0">Selecione o mês</option>
+                      <option value="1">Janeiro</option>
+                      <option value="2">Fevereiro</option>
+                      <option value="3">Março</option>
+                      <option value="4">Abril</option>
+                      <option value="5">Maio</option>
+                      <option value="6">Junho</option>
+                      <option value="7">Julho</option>
+                      <option value="8">Agosto</option>
+                      <option value="9">Setembro</option>
+                      <option value="10">Outubro</option>
+                      <option value="11">Novembro</option>
+                      <option value="12">Dezembro</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <select id="sale-report-status" autocomplete="off">
+                      <option value="todos">Todos</option>
+                      <option value="enviado">Enviadas</option>
+                      <option value="cancelado">Canceladas</option>
+                      <option value="em-devolucao">Ag. devolução</option>
+                      <option value="devolucao">Devoluções</option>
+                      <option value="preparacao">Preparação</option>
+                    </select>
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <button id="report-sale-filter-btn" class="button alt">Buscar</button>
+                  </div>
+                </div>
+                <div class="row uniform align-center">
+                  <div class="6u 12u$(xsmall)">
+                    <p>Relatório de produção</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>Cod</td>
+                          <td>Produto</td>
+                          <td>Cor</td>
+                          <td>Qtd</td>
+                        </tr>
+                      </thead>
+                      <tbody id="report-product-sale-tbody">
+                        
+                      </tbody>
+                    </table>
+                    <div class="align-center">
+                      <br>
+                      <button id="productSalePrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                      <span id="productSalePageNumber"></span>
+                      <button id="productSaleNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                    </div>
+                  </div>
+                  <div class="6u 12u$(xsmall)">
+                    <p>Relatório de Vendas</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>cod</td>
+                          <td>Data</td>
+                          <td>Origem</td>
+                          <td>Comprador</td>
+                          <td>Status</td>
+                          <td>Retira</td>
+                          <td>Ult.att</td>
+                          <td>dev</td>
+                        </tr>
+                      </thead>
+                      <tbody id="main-sale-tbody">
+                        
+                      </tbody>
+                    </table>
+                    <div class="align-center">
+                      <br>
+                      <button id="salePrevious" class="button small alt" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                      <span id="salePageNumber"></span>
+                      <button id="saleNext" class="button small alt" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+                    </div>
+                  </div>
+                </div>
+              </header>
+
+
+              <div class="content">
+                <header class="align-center">
+
+                  <div class="row uniform">
+                      <div class="4u 12u$(xsmall)">
+                        <div class="box" id="showSaleBox" style="display:none;">
+                          <div id="showSale">
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <div class="box" id="showDevolutionBox" style="display:none;">
+                          <div id="showDevolution">
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="4u 12u$(xsmall)">
+                        <div class="box" id="showWithdrawalBox" style="display:none;">
+                          <div id="showWithdrawal">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </header>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <% include ./../partials/footer %>
+    </footer>
+  </body>
+</html>
